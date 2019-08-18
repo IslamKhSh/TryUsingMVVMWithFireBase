@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.example.android.forsale.adapters.ItemsAdapters" />
+
+        <variable
+            name="item_view_model"
+            type="com.example.android.forsale.ui.viewmodel.ItemViewModel" />
+    </data>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/items_swipe"
+        style="@style/RefreshLayout"
+        android:padding="4dp"
+        tools:context=".ui.fragments.ItemFragment">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/items_recycler_view"
+            style="@style/RootView"
+            android:layout_margin="2dp"
+            android:scrollbars="vertical"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:spanCount="2"
+            tools:listitem="@layout/list_item" />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</layout>
