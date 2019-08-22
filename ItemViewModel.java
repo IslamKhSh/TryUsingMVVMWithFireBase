@@ -12,7 +12,7 @@ import java.util.List;
 public class ItemViewModel extends ViewModel {
     private ItemRepository itemRepository;
     private MutableLiveData<List<ItemData>> _mutableLiveData = new MutableLiveData<>();
-    private LiveData<List<ItemData>> mutableLiveData = _mutableLiveData;
+    private LiveData<List<ItemData>> mutableLiveData = _mutableLiveData; // yo can remove this line
 
 
     public LiveData<List<ItemData>> getCategoryData(String categoryName) {
@@ -21,6 +21,6 @@ public class ItemViewModel extends ViewModel {
         }
 
         _mutableLiveData.postValue(itemRepository.getItemData().getValue());
-        return mutableLiveData;
+        return _mutableLiveData;
     }
 }
